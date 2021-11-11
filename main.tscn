@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ball.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://CountDownManager.gd" type="Script" id=11]
 [ext_resource path="res://score.gd" type="Script" id=12]
 [ext_resource path="res://top_wall.gd" type="Script" id=13]
+[ext_resource path="res://ball2.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.7726, 4.05964 )
@@ -31,11 +32,11 @@ font_data = ExtResource( 10 )
 size = 40
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 90
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 180
 font_data = ExtResource( 10 )
 
@@ -44,6 +45,8 @@ script = ExtResource( 8 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 speed = 150
+
+[node name="ball" parent="." instance=ExtResource( 14 )]
 
 [node name="player2" type="Area2D" parent="."]
 position = Vector2( 240, 690 )
@@ -60,7 +63,8 @@ texture = ExtResource( 3 )
 [node name="Collision" type="CollisionShape2D" parent="player2"]
 shape = SubResource( 1 )
 
-[node name="ball" parent="." instance=ExtResource( 2 )]
+[node name="ball3" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 243.566, 424.777 )
 
 [node name="right_wall" type="Area2D" parent="."]
@@ -150,7 +154,7 @@ margin_left = 15.6569
 margin_top = 275.522
 margin_right = 473.657
 margin_bottom = 376.522
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "PONG"
 align = 1
 __meta__ = {
@@ -168,7 +172,7 @@ margin_left = 2.0
 margin_top = 262.0
 margin_right = 477.0
 margin_bottom = 488.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "3"
 align = 1
 __meta__ = {
